@@ -1,0 +1,20 @@
+btsync:
+  image: kartoza/btsync
+  hostname: btsync.data.inasafe.org
+  volumes:
+    - ./data:/web
+  environment:
+    # This should be the read only key
+    - SECRET=BSU2UCAVRV7P4CHRYOZGIRQ2VN6CH4JP3
+    - DEVICE=readonly-master.data.inasafe.org
+  restart: on-failure:5
+
+apache:
+  image: tianon/apache2
+  hostname: apache.data.inasafe.org
+  volumes:
+    - ./data:/var/www:ro
+  ports:
+    - "8190:80"
+  restart: on-failure:5
+
