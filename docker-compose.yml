@@ -10,10 +10,11 @@ btsync:
   restart: on-failure:5
 
 apache:
-  image: tianon/apache2
+  build: docker
   hostname: apache.data.inasafe.org
   volumes:
-    - ./data:/var/www:ro
+    - ./data:/var/www/html:ro
+    - ./resources:/var/www/resources:ro
   ports:
     - "8190:80"
   restart: on-failure:5
