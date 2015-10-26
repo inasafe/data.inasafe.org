@@ -2,3 +2,10 @@ data
 *.*~
 .idea
 .DS_Store
+
+sftp_backup/*
+!sftp_backup/.gitkeep
+
+
+# Credential files
+sftp_credential.env
