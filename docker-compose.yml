@@ -27,8 +27,8 @@ sftpbackup: &sftpbackup
     - YEARLY=3
     # set this to the target/source folder where the backup comes from
     - TARGET_FOLDER=/data_backup
-    # You can override this in sftp_credential.env
-    - SFTP_DIR=/inasafe/data.inasafe.org/
+    # You can specify this in sftp_credential.env
+    # - SFTP_DIR=/inasafe/data.inasafe.org/
   env_file:
     - sftp_credential.env
   restart: on-failure:5

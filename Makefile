@@ -23,6 +23,13 @@ deploy: build
 	@docker-compose -p $(PROJECT_ID) up -d btsync
 	@docker-compose -p $(PROJECT_ID) up -d apache
 
+backup:
+	@echo
+	@echo "------------------------------------------------------------------"
+	@echo "Backing up data"
+	@echo "------------------------------------------------------------------"
+	@docker exec -t -i $(PROJECT_ID)_sftpbackup_1 /backups.sh
+
 pushbackup:
 	@echo
 	@echo "------------------------------------------------------------------"
