@@ -22,9 +22,9 @@ sftpbackup: &sftpbackup
     - ./data:/data_backup
   environment:
     - DUMPPREFIX=data.inasafe.org
-    - DAILY=4
-    - MONTHLY=12
-    - YEARLY=3
+    - DAILY=3
+    - MONTHLY=2
+    - YEARLY=1
     # set this to the target/source folder where the backup comes from
     - TARGET_FOLDER=/data_backup
     # You can specify this in sftp_credential.env
