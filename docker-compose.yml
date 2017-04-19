@@ -40,6 +40,6 @@ apache:
     - ./data:/var/www/html:ro
     - ./resources:/var/www/resources:ro
   ports:
-    - "8190:80"
+    - "80:80"
   restart: on-failure:5
 
